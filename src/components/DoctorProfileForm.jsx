@@ -1,6 +1,10 @@
 import { useState, useRef } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export default function DoctorProfileForm() {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const role = searchParams.get('role') || 'Doctor';
   const [formData, setFormData] = useState({
     // Personal Info
     profilePicture: null,
@@ -61,7 +65,9 @@ export default function DoctorProfileForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Doctor profile data:', formData);
-    // Handle form submission
+    
+    // After successful submission, navigate to landing page
+    navigate(`/landing?role=${role}`);
   };
 
   const handleInputChange = (field, value) => {
