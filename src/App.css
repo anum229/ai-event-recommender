@@ -1,0 +1,17 @@
+/* src/App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+  text-align: center;
+}
+
+/* Custom color classes for the application */
+.text-secondary {
+  color: #1e40af; /* blue-800 */
+}
+
+.text-textLight {
+  color: #6b7280; /* gray-500 */
+}
